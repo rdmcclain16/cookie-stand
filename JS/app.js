@@ -1,7 +1,7 @@
 var hours = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM'];
 
 function random(min, max) {
-    return Math.floor(Math.random() * max) + min;}
+    return Math.floor(Math.random() * 65) + 23;}
 
 const seattle = {
     city: 'Seattle',
@@ -12,17 +12,11 @@ const seattle = {
     cookiesEachHour: [],
     totalDailyCookies: 0,
 
-    randomCookies: random(this.minGuestPerHr, this.maxGuestPerHr),
-    randomGuests: random(this.minGuestPerHr, this.maxGuestPerHr),
-
-
-    calcGuestEachHour: function() {
-        for(var i = 0; i < hours.length; i++) {
-        return seattle.randomCookies.render;
-        }    
+    randomCookies: function() {
+        console.log(Math.floor(Math.random() * 65) + 23);
     } 
-}
-    console.log(seattle.randomCookies());
+} 
+  seattle.randomCookies()
 
 const tokyo = {
     city: 'Tokyo',
@@ -33,21 +27,16 @@ const tokyo = {
     cookiesEachHour: [],
     totalDailyCookies: 0,
 
+    randomCookies: function() {
+        console.log(Math.floor(Math.random() * 24) + 3);
+    } 
+} 
+    tokyo.randomCookies()
+    
+//     render(); {
 
+//      }    
 
-
-    calcGuestEachHour: function() {
-        console.log(this.randomGuests + this.avgCookiePerGuest)
-        return Math.random()
-    },
-    calcCookiesEachHour: function() {
-
-    },
-
-    render() {
-
-     }    
-}
 const dubai = {
     city: 'Dubai',
     minGuestPerHr: 11,
@@ -58,17 +47,15 @@ const dubai = {
     totalDailyCookies: 0,
 
     randomCookies: function() {
-        console.log(Math.floor(Math.random() * this.maxGuestPerHr) + this.minGuestPerHr);
-    },
-    randomGuests: function() {
-        console.log(Math.floor(Math.random() * this.maxGuestPerHr) + this.minGuestPerHr);
+        console.log(Math.floor(Math.random() * 38) + 11);
+    }
+} 
+    dubai.randomCookies()
 
-    },
+// render(); {
 
-render() {
+// }
 
-}
-};
 
 
 const paris = {
@@ -79,18 +66,17 @@ const paris = {
     guestEachHour:[],
     cookiesEachHour: [],
     totalDailyCookies: 0,
-    calcGuestEachHour: function() {
-        console.log(this.randomGuests + this.avgCookiePerGuest)
-        return Math.random()
-    },
-    calcCookiesEachHour: function() {
+    
+    randomCookies: function() {
+        console.log(Math.floor(Math.random() * 38) + 23);
+    }
+} 
+    paris.randomCookies()
 
-    },
+//     render(); {
 
-    render() {
+//      }    
 
-     }    
-}
 const lima = {
     city: 'Lima',
     minGuestPerHr: 2,
@@ -99,15 +85,12 @@ const lima = {
     guestEachHour:[],
     cookiesEachHour: [],
     totalDailyCookies: 0,
-    calcGuestEachHour: function() {
-        console.log(this.randomGuests + this.avgCookiePerGuest)
-        return Math.random()
-    },
-    calcCookiesEachHour: function() {
+    randomCookies: function() {
+        console.log(Math.floor(Math.random() * 16) + 2);
+    }
+} 
+    lima.randomCookies()
 
-    },
+//     render(); {
 
-    render() {
-
-     }    
-}
+//      }
