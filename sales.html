@@ -59,6 +59,35 @@
   <li><a href="index.html">About</a></li>
 </ul>
 </div>
+<!-- <table id="table" style="width:100%">
+  <tr>
+    <th>Cities</th>
+    <th>6AM</th>
+    <th>7AM</th>
+    <th>8AM</th>
+    <th>9AM</th>
+    <th>10AM</th>
+    <th>11AM</th>
+    <th>12PM</th>
+    <th>1PM</th>
+    <th>2PM</th>
+    <th>3PM</th>
+    <th>4PM</th>
+    <th>5PM</th>
+    <th>6PM</th>
+    <th>7PM</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr> -->
+</table>
   <table id="table">
       <thead id="t-head"></thead>
       <tbody id="t-body">
@@ -72,17 +101,17 @@
       <fieldset>
           <legend>New Cookie Stand Information</legend>
 
-          <label for="location">New Cookie Stand Location: </label>
-          <input name="location" type="text" size="15" required />
+          <label for="name">New Cookie Stand Location: </label>
+          <input name="name" type="text" size="15" required />
 
-          <label for="minCustomer">Minimum Sales Per Hour: </label>
-          <input name="minCustomer" type="text" size="15" required />
+          <label for="minCustomer">Minimum Cust Per Hour: </label>
+          <input name="minCustomer" type="number" size="15" required />
 
-          <label for="maxCustomer">Maximum Sales Per Hour: </label>
-          <input name="maxCustomer" type="text" size="15" required />
+          <label for="maxCustomer">Maximum Cust Per Hour: </label>
+          <input name="maxCustomer" type="number" size="15" required />
 
           <label for="avg-cookies">Average Cookies Per Sale: </label>
-          <input name="avg-cookies" type="text" size="15" required />
+          <input name="avg-cookies" type="number" size="15" required />
 
           <button type="submit">Add a New Cookie Stand</button>
       </fieldset>
