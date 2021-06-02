@@ -1,3 +1,6 @@
+
+'use strict';
+
 const hours = ['6am', '7am', '8am', '9am','10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 let allCookieStands = [];
@@ -18,34 +21,34 @@ new cookieStand('Dubai', '11', '38', '3.7');
 new cookieStand('Paris', '20', '38', '2.3');
 new cookieStand('Lima', '2', '16', '4.6');
 
-cookieStand.prototype.calcCustPerHr = function() {
+
+cookieStand.prototype.calcCustomersPerHr = function() {
   for(let i = 0; i < hours.length; i++) {
-      this.customersPerHr.push(Math.floor(Math.random() * (this.maxCustPerHour-this.minCutstPerHour+1)+this.minCustPerHour));
+      this.customersPerHr.push(Math.floor(Math.random() * (this.maxCustPerHour-this.minCustPerHour+1)+this.minCustPerHour));
   }
 };
-cookieStand.prototype.calcCookiesEachHr = function() {
-  this.calcCustPerHr();
+cookieStand.prototype.calcCookiesPerHr = function() {
+  this.calcCustomersPerHr();
   for(let i = 0; i < hours.length; i++) {
-this.cookiesPerHr.push(Math.ceil(this.customersPerHr[i] * this.cookiesPerHr))
+this.cookiesPerHr.push(Math.ceil(this.customersPerHr[i] * this.cookiesPerSale))
   }
 };
-cookieStand.prototype.calcTotalDailyCookies = function() {
+cookieStand.prototype.calcTotalDailyCookies=function() {
   let cookiesTotal = 0;
   for(let i = 0; i < hours.length; i++) {
-cookiesTotal = this.cookiesPerHr[i];
+cookiesTotal += this.cookiesPerHr[i];
   }
   return cookiesTotal;
 };
-
 cookieStand.prototype.render = function() {
-  this.calcCookiesEachHr();
+  this.calcCookiesPerHr();
   let cookieStandTable = document.getElementById('t-body');
   let trEl = document.createElement('tr');
   let tdEl = document.createElement('td');
   tdEl.textContent = this.name;
   trEl.appendChild(tdEl);
   for (let i = 0; i < hours.length; i++) {
-      tdEl = document.createElement('td');
+      let tdEl = document.createElement('td');
       tdEl.textContent = this.cookiesPerHr[i];
       trEl.appendChild(tdEl);
   }
@@ -85,7 +88,7 @@ function totalAtFooter() {
   let standCookiePerHr = [];
   for (let i = 0; i < hours.length; i++) {
       let totalCookiePerHour = 0;
-      for (let i = 0; j < allCookieStands.length; j++) {
+      for (let i = 0; i < allCookieStands.length; i++) {
           totalCookiePerHour = allCookieStands[i].cookiesPerHr[i];
       }
       standCookiePerHr.push(totalCookiePerHour);
@@ -142,6 +145,9 @@ function dupRow() {
 }
 tableHead();
 renderCookieStand();
+
+
+
 
 
 
